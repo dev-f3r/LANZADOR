@@ -1,0 +1,3 @@
+[submodule "juego/meeple-combat"]
+	path = juego/meeple-combat
+	url = https://github.com/dev-f3r/meeple-combat
