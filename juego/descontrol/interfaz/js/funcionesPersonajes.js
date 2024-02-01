@@ -136,6 +136,7 @@ function descripcionAtributo(nombre) {
  * 
  */
 function atacar() {
+
     // Tira un dado de 6 caras 
     let dado = Math.floor(Math.random() * 6) + 1
 
@@ -157,6 +158,12 @@ function atacar() {
 
     // Muestra el resultado en la consola
     consolaPersonajeTxt(texto)
+    
+    if(carta && carta.tipo === "epicas") {
+        reestaurarPersonaje()
+        cambiarCarta("normales", "SIGUE JUGANDO")
+        mostrarCarta()
+    }
 }
 
 
