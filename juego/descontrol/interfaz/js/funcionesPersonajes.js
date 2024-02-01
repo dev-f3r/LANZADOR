@@ -160,7 +160,9 @@ function atacar() {
     consolaPersonajeTxt(texto)
     
     if(carta && carta.tipo === "epicas") {
+        const tmpvida = personaje.vida
         reestaurarPersonaje()
+        personaje.vida = tmpvida
         cambiarCarta("normales", "SIGUE JUGANDO")
         mostrarCarta()
     }
