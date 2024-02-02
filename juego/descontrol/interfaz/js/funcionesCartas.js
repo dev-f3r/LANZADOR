@@ -56,9 +56,10 @@ function levantarCarta() {
  * @param {nombre} string - El nombre de la nueva carta
  */
 function cambiarCarta(tipo, nombre) {
-    Object.assign(carta, cartasDict[tipo][nombre])
+    const cartaNueva = cartasDict[tipo][nombre]
+    Object.assign(carta, cartaNueva)
     carta["tipo"] = tipo
-    if(carta["nuevo estado"]) {
+    if(cartaNueva["nuevo estado"]) {
         document.getElementById(carta["nuevo estado"]).click()
     }
 }

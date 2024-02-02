@@ -255,6 +255,7 @@ function mostrarOcultarModalCambioEstado() {
             personaje.vida = vidaActual
             // Se muestran los cambios del personaje
             mostrarPersonaje()
+            consolaPersonajeTxt("CONSOLA")
         }
         // Si no hay un personaje se pide uno
         else consolaPersonajeTxt("Primero selecciona un personaje")
