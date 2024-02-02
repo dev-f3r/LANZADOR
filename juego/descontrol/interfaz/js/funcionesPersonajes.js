@@ -136,29 +136,31 @@ function descripcionAtributo(nombre) {
  * 
  */
 function atacar() {
-
     // Tira un dado de 6 caras 
     let dado = Math.floor(Math.random() * 6) + 1
 
     // El texto a mostrar
     let texto = "Ataque"
+    if(carta && carta.tipo === "epicas") {
+        texto += ` con ${carta.nombre.toLowerCase()}`
+    }
 
     // Verifica si fue un critico
     if (dado === 6) {
-        texto += ` ${dado}<br>Daño ${Math.floor(personaje.ataque * 1)}`
+        texto += `: ${dado}<br>Daño ${Math.floor(personaje.ataque * 1)}`
     }
     // Verifica si fue un fallo
     else if (dado === 1) {
-        texto += ` ${dado}<br>Daño ${Math.floor(personaje.ataque * 0)}`
+        texto += `: ${dado}<br>Daño ${Math.floor(personaje.ataque * 0)}`
     }
     // Resultado normal
     else {
-        texto += ` ${dado}<br>Daño ${Math.floor(personaje.ataque * 0.75)}`
+        texto += `: ${dado}<br>Daño ${Math.floor(personaje.ataque * 0.75)}`
     }
 
     // Muestra el resultado en la consola
     consolaPersonajeTxt(texto)
-    
+
     if(carta && carta.tipo === "epicas") {
         const tmpvida = personaje.vida
         reestaurarPersonaje()
